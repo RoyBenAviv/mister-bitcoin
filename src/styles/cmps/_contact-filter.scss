@@ -1,0 +1,22 @@
+.contact-filter {
+    padding: rem(20px);
+    label {
+        font-size: rem(25px);
+        color: $pink;
+        width: max-content;
+        margin: auto;
+        @include flex;
+        input {
+            margin-inline-start: rem(15px);
+            height: 25px;
+            width: 200px;
+            border-radius: 3px;
+            border: none;
+            transition: box-shadow 0.3s;
+            &:focus {
+                outline: none;
+                box-shadow: 0px 0px 8px 2px $pink;
+            }
+        }
+    }
+}

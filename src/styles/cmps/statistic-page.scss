@@ -1,0 +1,37 @@
+
+.statistic-page {
+    p {
+        padding: rem(20px)
+    }
+    .period-btns {
+        @include flex(row, flex-start);
+        gap: rem(6px);
+        margin-inline-start: rem(10px);
+        margin-block-start: rem(-10px);
+        > button {
+            border-radius: rem(3px);
+            background-color: darken($pink, 30%);
+            color: $white;
+            border: none;
+            padding: rem(5px) rem(20px);
+            font-family: inter-bold;
+            font-size: rem(16px);
+            transition: all 400ms;
+            &:hover {
+                background-color: $pink;
+                color: black;
+                transform: translateY(-4px);
+            }
+        }   
+    }
+    .chart-container {
+        margin-block-start: rem(100px);
+        h2 {
+            text-align: center;
+            margin-block-end: rem(40px);
+        }
+        &.trade-volume {
+            margin-block-end: rem(10px);
+        }
+    }
+}

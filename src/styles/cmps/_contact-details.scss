@@ -1,0 +1,28 @@
+.contact-details {
+    margin-block-start: rem(50px);
+    @include flex(column);
+    h1 {
+        font-size: rem(50px);
+        margin-block-start: rem(10px);
+        border-top: 4px solid $bitcoin;
+        padding-block: rem(10px);
+    }
+    img {
+        width: 400px;
+    }
+    h2 {
+        margin: rem(15px);
+        span {
+            color: $pink;
+        }
+    }
+    .exit {
+        cursor: pointer;
+        color: $bitcoin;
+        position: absolute;
+        font-size: rem(70px);
+        left: 20%;
+        top: 200px;
+        transform: scaleX(-1);
+    }
+}

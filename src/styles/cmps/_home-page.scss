@@ -1,0 +1,52 @@
+.home-page {
+  @include flex;
+  padding-block-start: rem(80px);
+  > * {
+    flex-basis: 50%;
+    @include flex(column, center, flex-start);
+  }
+  h1 {
+    font-size: rem(55px);
+  }
+  .home-intro {
+    .btc-animation {
+      margin: rem(-50px) auto 0 auto;
+    }
+    h1 {
+      align-self: center;
+      font-size: rem(80px);
+      margin: rem(15px) 0;
+      @include title-gradiant;
+    }
+    h2 {
+      align-self: center;
+      @include title-gradiant;
+      font-family: inter-black;
+      font-size: em(27px);
+      margin-block-end: rem(15px);
+    }
+  }
+  .user-content {
+    h2 {
+        font-size: rem(25px);
+        margin: rem(25px) 0;
+    }      
+    align-self: flex-start;
+    li {
+      .coin {
+        color: rgb(79, 224, 79);
+      }
+      .bitcoin {
+        color: $bitcoin;
+      }
+      i {
+        font-size: em(18px);
+      }
+
+      @include flex(row, flex-start);
+      gap: rem(20px);
+      margin-block-end: rem(15px);
+      font-size: rem(20px);
+    }
+  }
+}

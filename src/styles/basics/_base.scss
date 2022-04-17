@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $background;
+  color: $white;
+  font-family: roboto-regular, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+  font-family: inter-bold;
+  margin: 0;
+  font-weight: 400;
+  padding: 0;
+}
+
+h1 {
+  font-family: inter-black;
+}
+
+p {
+  font-weight: 400;
+  margin: 0;
+}
+
+button,
+a {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+}
+
+.main-layout {
+  padding: 0 rem(100px)
+}
+
+//// HEADER
+header {
+  @include flex(row, space-between);
+  padding: 0 rem(30px);
+  height: 10vh;
+  background-color: lighten(#080b1e, 2%);
+  .logo {
+    user-select: none;
+    h1 {
+      font-family: inter-black;
+      i {
+        font-size: rem(30px);
+        padding: 0 rem(3px);
+        color: $bitcoin;
+      }
+    }
+    img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    font-size: rem(25px);
+    height: 100%;
+    @include flex(row, flex-start);
+    gap: rem(13px);
+    span {
+      font-size: rem(50px);
+      color: $bitcoin;
+    }
+  }
+  nav {
+    @include flex;
+    gap: 20px;
+    font-size: rem(25px);
+    color: $pink;
+  }
+}

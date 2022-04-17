@@ -1,0 +1,18 @@
+// SETUP
+@import "setup/variables";
+@import "setup/typography";
+@import "setup/functions";
+@import "setup/mixins";
+
+// BASICS
+@import "basics/base";
+
+//CMPS
+@import "cmps/contact-list";
+@import "cmps/contact-preview";
+
+//PAGES
+@import "cmps/home-page";
+@import "cmps/contact-details";
+@import "cmps/contact-filter";
+@import "cmps/statistic-page";
