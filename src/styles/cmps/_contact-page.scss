@@ -1,0 +1,14 @@
+.contact-page {
+    .page-actions {
+        @include flex(row, space-around);
+        margin: rem(20px) auto;
+        @media (max-width: 600px) {
+            gap: 15px;
+            flex-direction: column-reverse;
+        }
+        a {
+            font-size: rem(23px);
+            color: $pink;
+        }
+    }
+}

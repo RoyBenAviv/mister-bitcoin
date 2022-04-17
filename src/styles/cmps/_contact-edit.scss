@@ -1,0 +1,52 @@
+.contact-edit {
+    @media (max-width: 600px) {
+        h2 {
+            display: none;
+        }
+    }
+    @include flex(column);
+    h2 {
+        margin: rem(25px) 0;
+
+    }
+    img {
+        width: 400px;
+        @media (max-width: 600px) {
+            width: 250px;
+            margin-block-start: rem(40px);
+        }
+    }
+    i {
+        color: rgb(79, 224, 79);
+        font-size: rem(200px);
+    }
+    form {
+        border-top: 4px solid $bitcoin;
+        @include flex(column);
+        padding-block: rem(10px);
+        margin-block-start: rem(10px);
+        label {
+            margin: rem(15px);
+            font-size: rem(24px);
+            font-family: inter-bold;
+            color: $pink;
+            input {
+                margin-inline-start: rem(10px);
+                background: none;
+                color: $white;
+                font-size: rem(24px);
+                border: none;
+                border-bottom: 2px solid $pink;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        button {
+            @include button;
+            padding: rem(10px) rem(30px);
+            font-size: rem(30px);
+            margin-block-start: rem(20px);
+        }
+    }
+}

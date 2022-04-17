@@ -1,15 +1,13 @@
 .contact-filter {
-    padding: rem(20px);
     label {
-        font-size: rem(25px);
+        font-size: rem(23px);
         color: $pink;
-        width: max-content;
-        margin: auto;
         @include flex;
         input {
-            margin-inline-start: rem(15px);
             height: 25px;
+            margin-inline-start: rem(15px);
             width: 200px;
+            justify-self: center;
             border-radius: 3px;
             border: none;
             transition: box-shadow 0.3s;

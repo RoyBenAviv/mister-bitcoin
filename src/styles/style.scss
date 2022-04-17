@@ -10,9 +10,12 @@
 //CMPS
 @import "cmps/contact-list";
 @import "cmps/contact-preview";
+@import "cmps/contact-edit";
 
 //PAGES
+@import "cmps/app-header";
 @import "cmps/home-page";
+@import "cmps/contact-page";
 @import "cmps/contact-details";
 @import "cmps/contact-filter";
 @import "cmps/statistic-page";

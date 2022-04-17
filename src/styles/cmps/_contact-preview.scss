@@ -1,4 +1,11 @@
+.preview-container:hover {
+    text-decoration: none;
+}
+
 .contact-preview {
+    @media (max-width: 600px) {
+        width: 150px;
+    }
     @include flex(column);
     background-color: lighten(#080b1e, 5%);
     padding: rem(15px);
@@ -17,11 +24,27 @@
         justify-self: center;
         margin-block-end: rem(10px);
         transition: all 0.3s;
+        @media (max-width: 600px) {
+            width: 115px;
+            margin: auto;
+            display: flex;
+        }
     }
     h2 {
         margin-block-start: rem(10px);
         border-top: 4px solid $bitcoin;
         padding-block: rem(10px);
         font-size: rem(18px);
+        text-decoration: none;
+        text-align: center;
+    }
+    .actions {
+        @include flex(row, space-between);
+        > span, i {
+            @include title-gradiant;
+        }
+        width: 100%;
+        padding-block-start: rem(15px);
+        font-size: rem(20px);
     }
 }

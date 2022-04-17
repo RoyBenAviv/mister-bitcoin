@@ -14,10 +14,7 @@ export class HomePage extends Component {
     return {
       loop: true,
       autoplay: true,
-      animationData,
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYmid slice',
-      },
+      animationData
     }
   }
 
@@ -55,7 +52,7 @@ export class HomePage extends Component {
         <div className="home-intro">
           <h1>Mister Bitcoin</h1>
           <h2>Crypto application services.</h2>
-          <div class="btc-animation">
+          <div className="btc-animation">
             <Lottie options={this.defaultOptions} height={600} width={750} />
           </div>
         </div>

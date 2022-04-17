@@ -1,5 +1,9 @@
 .contact-list {
     @include flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: rem(40px);
+    margin-block-end: rem(30px);   
+    @media (max-width: 760px) {
+        gap: rem(20px)
+    }
 }

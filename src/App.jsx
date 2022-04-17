@@ -1,43 +1,32 @@
 import './styles/style.scss'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { AppHeader } from './components/AppHeader';
 import { HomePage } from './pages/HomePage'
+import { ContactEdit } from './pages/ContactEdit'
 import { ContactPage } from './pages/ContactPage'
 import { StatisticPage } from './pages/StatisticPage'
-import { Component } from 'react';
-import logo from './assets/images/bitcoin-logo.png'
+import { ContactDetails } from './pages/ContactDetails';
 
 
-export class App extends Component { 
+function App() {
 
-state =  {
-  route: 'home'
-}
-
-setRoute(route) {
-  this.setState({ route })
-}
-render() {
-  const { route } = this.state
   return (
+    <Router>
+
     <div className="app">
-        <header className="app-header">
-          <div className="logo">
-          <img src={logo} alt="logo" /><h1>Mister Bitc<i className="fa-brands fa-bitcoin"></i>in</h1>
-          </div>
-          <nav>
-                <a  onClick={() => this.setRoute('home')}>Home</a>
-                <a  onClick={() => this.setRoute('contact')}>Contact</a>
-                <a  onClick={() => this.setRoute('statistic')}>Statistic</a>
-          </nav>
-        </header>
+        <AppHeader />
         <main className="main-layout">
-            {route === 'home' ? <HomePage /> : ''} 
-            {route === 'contact' ? < ContactPage /> : ''}
-            {route === 'statistic' ? < StatisticPage /> : ''}
+          <Switch>
+              <Route path='/contact/edit/:id?' component={ContactEdit} />
+              <Route path='/contact/:id' component={ContactDetails} />
+              <Route path="/statistic" component={StatisticPage}/>
+              <Route path="/contact" component={ContactPage}/>
+              <Route path="/" component={HomePage}/>
+          </Switch>
         </main>
     </div>
-  );
-
-}
+    </Router>
+  )
 }
 
 export default App;

@@ -1,10 +1,10 @@
 import { ContactPreview } from "./ContactPreview.jsx"
 
-export function ContactList({contacts, onSelectContact}) {
+export function ContactList({contacts, onRemoveContact}) {
   return (
     <section className="contact-list">
         {contacts.map(contact =>
-            <ContactPreview key={contact._id} onSelectContact={onSelectContact} contact={contact}/>
+            <ContactPreview key={contact._id} onRemoveContact={onRemoveContact} contact={contact}/>
           )}
 
     </section>
