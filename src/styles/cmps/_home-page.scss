@@ -90,6 +90,11 @@
       padding: rem(10px) 0;
     }
     .move-list {
+      align-self: flex-start;
+      @media (max-width: 650px) {
+        align-self: center;
+
+      }
       .movelist-container {
         padding: rem(20px) 0;
         white-space: nowrap;
