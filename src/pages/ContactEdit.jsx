@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import contactService from '../services/contactService'
-
 export class ContactEdit extends Component {
 
   state = {

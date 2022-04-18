@@ -1,51 +1,73 @@
 .home-page {
-  overflow: hidden;
+  overflow: hidden !important;
   @media (max-width: 900px) {
     flex-direction: column;
-    padding-block-start: rem(10px)
+    padding-block-start: rem(10px);
   }
   @include flex;
-  padding-block-start: rem(80px);
+  padding-block-start: rem(20px);
   > * {
     flex-basis: 50%;
     @include flex(column, center, flex-start);
   }
   .home-intro {
     .btc-animation {
-      margin: rem(-50px) auto 0 auto;
-      @media (max-width: 900px) {
-        margin: rem(-100px) auto 0 auto;
+      margin: rem(-75px) auto 0 auto;
+      @media (max-width: 1200px) {
+
+        margin: rem(-30px) auto 0 auto;
         div {
-          width: 450px !important;
+          max-width: 450px !important;
         }
+      }
+      @media (max-width: 900px) {
+        margin: rem(-120px) auto 0 auto;
       }
     }
     h1 {
       align-self: center;
-      font-size: rem(80px);
-      margin: rem(15px) 0;
+      font-size: rem(60px);
+      margin: rem(8px) 0;
       @include title-gradiant;
+      @media (max-width: 1200px) {
+        font-size: rem(40px);
+      }
       @media (max-width: 900px) {
         font-size: rem(35px);
         margin-block-start: rem(40px);
       }
     }
     h2 {
+      
       align-self: center;
       @include title-gradiant;
       font-family: inter-black;
       font-size: em(27px);
-      margin-block-end: rem(15px);
+      margin: rem(15px) 0;
       @media (max-width: 900px) {
         font-size: rem(20px);
       }
     }
   }
   .user-content {
+    @media (max-width: 900px) {
+      @include flex;
+      gap: rem(100px);
+      width: 100%;
+    }
+    @media(max-width: 650px) {
+      flex-direction: column;
+      gap: rem(10px);
+      text-align: center;
+    }
     h2 {
-        font-size: rem(25px);
-        margin: rem(25px) 0;
-    }      
+      font-size: rem(25px);
+      // margin: rem(25px) 0;
+    }
+    img {
+      width: 100px;
+      margin: rem(20px);
+    }
     align-self: flex-start;
     li {
       .coin {
@@ -62,6 +84,30 @@
       gap: rem(20px);
       margin-block-end: rem(15px);
       font-size: rem(20px);
+    }
+    margin-block-start: rem(40px);
+    h3 {
+      padding: rem(10px) 0;
+    }
+    .move-list {
+      .movelist-container {
+        padding: rem(20px) 0;
+        white-space: nowrap;
+        @include flex(row);
+        gap: rem(20px);
+        > * {
+          flex-basis: 50%;
+          @include flex(column, flex-start, flex-start);
+          gap: rem(10px);
+          p {
+            font-size: rem(13px);
+            i {
+              color: $bitcoin;
+              margin-inline-start: rem(4px);
+            }
+          }
+        }
+      }
     }
   }
 }

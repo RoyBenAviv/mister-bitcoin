@@ -10,7 +10,6 @@ export class ContactFilter extends Component {
     const field = target.name
     const value = target.value
     this.setState({ [field]: value }, () => {
-      console.log(this.state)
         this.props.onChangeFilter(this.state)
     })
 }

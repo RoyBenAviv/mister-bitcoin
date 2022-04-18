@@ -1,5 +1,5 @@
 .contact-details {
-    margin-block-start: rem(50px);
+    margin-block-start: rem(20px);
     @include flex(column);
     h1 {
         font-size: rem(50px);
@@ -8,7 +8,7 @@
         padding-block: rem(10px);
     }
     img {
-        width: 400px;
+        width: 300px;
     }
     h2 {
         margin: rem(15px);
@@ -21,7 +21,7 @@
         color: $bitcoin;
         position: absolute;
         font-size: rem(70px);
-        left: 20%;
+        left: 50px;
         top: 200px;
         transform: scaleX(-1);
     }

@@ -1,14 +1,17 @@
 import { Component } from 'react'
-import { Link } from 'react-router-dom'
 import contactService from '../services/contactService'
-
+import { TransferFund } from '../components/TransferFund'
+import { MoveList } from '../components/MoveList'
+import { userService } from '../services/userService'
 export class ContactDetails extends Component {
   state = {
     contact: null,
+    user: null,
   }
 
   async componentDidMount() {
     this.loadContact()
+    this.loadUser()
   }
   async loadContact() {
     const contact = await contactService.getContactById(this.props.match.params.id)
@@ -17,6 +20,21 @@ export class ContactDetails extends Component {
 
   onBack = () => {
     this.props.history.push('/contact')
+  }
+
+  loadUser() {
+    const user = userService.getUser()
+    this.setState({ user })
+  }
+
+  get contactMoves() {
+    const contactMoves = this.state.user.moves.filter((move) => move.toId === this.state.contact._id)
+    return contactMoves
+  }
+
+  onTransferCoins = (amount) => {
+    userService.addMove(this.state.contact, amount)
+    this.loadUser()
   }
 
   render() {
@@ -36,6 +54,8 @@ export class ContactDetails extends Component {
         <span onClick={this.onBack} className="exit">
           <i className="fa-solid fa-arrow-right-from-bracket"></i>
         </span>
+        <TransferFund contact={contact} onTransferCoins={this.onTransferCoins} />
+        <MoveList title="Your moves:" moves={this.contactMoves}/>
       </section>
     )
   }

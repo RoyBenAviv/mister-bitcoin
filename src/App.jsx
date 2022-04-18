@@ -6,9 +6,15 @@ import { ContactEdit } from './pages/ContactEdit'
 import { ContactPage } from './pages/ContactPage'
 import { StatisticPage } from './pages/StatisticPage'
 import { ContactDetails } from './pages/ContactDetails';
-
+import { userService } from './services/userService';
+import { Redirect } from 'react-router-dom';
+import { SignupPage } from './pages/SignupPage';
 
 function App() {
+  const PrivateRoute = (props) => {
+    const user = userService.getUser()
+    return user ? <Route {...props} /> : <Redirect to="/signup" />
+  }
 
   return (
     <Router>
@@ -17,11 +23,12 @@ function App() {
         <AppHeader />
         <main className="main-layout">
           <Switch>
-              <Route path='/contact/edit/:id?' component={ContactEdit} />
-              <Route path='/contact/:id' component={ContactDetails} />
-              <Route path="/statistic" component={StatisticPage}/>
-              <Route path="/contact" component={ContactPage}/>
-              <Route path="/" component={HomePage}/>
+              <PrivateRoute path='/contact/edit/:id?' component={ContactEdit} />
+              <PrivateRoute path='/contact/:id' component={ContactDetails} />
+              <PrivateRoute path="/statistic" component={StatisticPage}/>
+              <PrivateRoute path="/contact" component={ContactPage}/>
+              <Route path="/signup" component={SignupPage} />
+              <PrivateRoute path="/" component={HomePage}/>
           </Switch>
         </main>
     </div>

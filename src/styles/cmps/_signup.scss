@@ -1,0 +1,83 @@
+.signup-page {
+overflow: hidden;
+  position: absolute;
+  inset: 0;
+  background-color: #000117;
+  @include flex(column, flex-start);
+  .btc-animation {
+    margin-block-start: rem(-90px);
+    @media(max-width: 600px) {
+        div {
+            width: 380px !important;
+        }
+    }
+  }
+  h1 {
+    font-size: rem(80px);
+    margin-block-start: rem(-70px);
+    @include title-gradiant;
+    @media(max-width: 600px) {
+        font-size: rem(40px);
+        margin-block-start: rem(-50px);
+    }
+  }
+  h2 {
+    @include title-gradiant;
+    font-size: 2em;
+    @media(max-width: 600px) {
+        font-size: rem(25px);
+    }
+  }
+  label {
+
+    position: relative;
+    margin-block-start: rem(70px);
+    font-size: rem(30px);
+    @include flex(column);
+    font-family: inter-bold;
+    .fa-solid {
+      transform: rotate(45deg);
+      font-size: rem(40px);
+    }
+    input {
+      width: 100%;
+      margin-block-start: rem(30px);
+      background: none;
+      color: $white;
+      font-size: rem(24px);
+      border: none;
+      border-bottom: 2px solid $pink;
+      &:focus {
+        outline: none;
+      }
+    }
+    .go {
+        position: absolute;
+        bottom: -10px;
+        right: 10px;
+        font-size: rem(50px);
+        @include title-gradiant;
+        cursor: pointer;
+        &:hover {
+            background: -webkit-linear-gradient(180deg, $pink 5% ,$bitcoin);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    @media (max-width: 600px) {
+        font-size: rem(18px);
+        .fa-solid {
+            font-size: rem(22px);
+        }
+        input {
+            width: 90%;
+        }
+        .go {
+            font-size: 40px;
+            right: 20px;
+            padding: rem(2px);
+        }
+    }
+  }
+
+}

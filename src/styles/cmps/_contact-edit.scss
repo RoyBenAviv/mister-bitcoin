@@ -6,11 +6,11 @@
     }
     @include flex(column);
     h2 {
-        margin: rem(25px) 0;
+        margin: rem(10px) 0;
 
     }
     img {
-        width: 400px;
+        width: 300px;
         @media (max-width: 600px) {
             width: 250px;
             margin-block-start: rem(40px);

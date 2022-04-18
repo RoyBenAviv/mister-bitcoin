@@ -1,36 +1,29 @@
 import { Component } from 'react'
-import contactService from '../services/contactService'
+import { connect } from 'react-redux'
 import { ContactList } from '../components/ContactList'
-import ContactFilter from '../components/ContactFilter'
+import { ContactFilter } from '../components/ContactFilter'
 import { Link } from 'react-router-dom'
+import { loadContacts, removeContact, setFilterBy } from '../store/actions/contactActions'
 
-export class ContactPage extends Component {
-  state = {
-    contacts: null,
-    selectedContactId: null,
-    filterBy: null,
+class _ContactPage extends Component {
+
+  async componentDidMount() {
+    this.props.loadContacts()
+    
   }
 
-  componentDidMount() {
-    this.loadContacts()
-  }
-
-  onChangeFilter = (filterBy) => {
-    this.setState({ filterBy }, this.loadContacts)
-  }
-
-  async loadContacts() {
-    const contacts = await contactService.getContacts(this.state.filterBy)
-    this.setState({ contacts })
+  onChangeFilter = async (filterBy) => {
+    await this.props.setFilterBy(filterBy)
+    console.log('filterBy',filterBy);
+    this.props.loadContacts()
   }
 
   onRemoveContact = async (contactId) => {
-    await contactService.deleteContact(contactId)
-    this.loadContacts()
+    this.props.removeContact(contactId)
   }
 
   render() {
-    const { contacts } = this.state
+    const { contacts } = this.props
     if (!contacts) return <div>Loading...</div>
     return (
       <section className="contact-page">
@@ -45,4 +38,16 @@ export class ContactPage extends Component {
   }
 }
 
-export default ContactPage
+const mapStateToProps = state => {
+  return {
+    contacts: state.contacts
+  }
+}
+
+const mapDispatchToProps = {
+  loadContacts,
+  removeContact,
+  setFilterBy
+}
+
+export const ContactPage = connect(mapStateToProps, mapDispatchToProps)(_ContactPage)

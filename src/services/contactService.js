@@ -15,12 +15,6 @@ const contacts = [
     "email": "ochoahyde@renovize.com",
     "phone": "+1 (968) 593-3824"
   },
-  // {
-  //   "_id": "5a5664025f6ae9aa24a99fde",
-  //   "name": "Hallie Mclean",
-  //   "email": "halliemclean@renovize.com",
-  //   "phone": "+1 (948) 464-2888"
-  // },
   {
     "_id": "5a56640252d6acddd183d319",
     "name": "Parsons Norris",
@@ -143,7 +137,6 @@ function getContacts(filterBy = null) {
   return new Promise((resolve, reject) => {
     var contactsToReturn = contacts;
     if (filterBy && filterBy.term) {
-      console.log(filterBy)
       contactsToReturn = filter(filterBy.term)
     }
     resolve(sort(contactsToReturn))
