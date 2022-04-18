@@ -21,8 +21,8 @@ class _HomePage extends Component {
   }
 
   async componentDidMount() {
-    const user = this.props.user
-    console.log(this.props.user)
+    const user =  await this.props.user
+    this.loadUser()
     this.getRate()
     this.setState({user})
   }
@@ -43,7 +43,7 @@ class _HomePage extends Component {
 
   render() {
     const { btcRate, user } = this.state
-    if (!user || !btcRate) return <div>Loading...</div>
+    if (!btcRate || !user) return <div>Loading...</div>
     return (
       <section className="home-page">
         <div className="user-content">
