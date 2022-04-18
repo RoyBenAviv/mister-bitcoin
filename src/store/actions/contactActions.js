@@ -3,7 +3,7 @@ import contactService from "../../services/contactService";
 export function loadContacts() {
     return async (dispatch, getState) => {
         try {
-            const {filterBy} = getState()
+            const {filterBy} = getState().contactModule
             const contacts = await contactService.getContacts(filterBy)
             dispatch({type: 'SET_CONTACTS', contacts})            
         } catch (err) {

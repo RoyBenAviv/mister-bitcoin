@@ -35,4 +35,5 @@ function signup(name) {
     moves: []
   }
   storageService.store(USER_KEY, user)
+  return user
 }

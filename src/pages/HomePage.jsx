@@ -1,11 +1,12 @@
 import { Component } from 'react'
+import { connect } from 'react-redux'
 import { bitcoinService } from '../services/bitcoinService'
 import { userService } from '../services/userService'
 import Lottie from 'react-lottie'
 import animationData from '../assets/animations/homepage-bitcoin.json'
 import { MoveList } from '../components/MoveList'
 
-export class HomePage extends Component {
+class _HomePage extends Component {
   state = {
     user: null,
     btcRate: null,
@@ -15,13 +16,15 @@ export class HomePage extends Component {
     return {
       loop: true,
       autoplay: true,
-      animationData
+      animationData    
     }
   }
 
   async componentDidMount() {
-    this.loadUser()
+    const user = this.props.user
+    console.log(this.props.user)
     this.getRate()
+    this.setState({user})
   }
 
   get userMoves() {
@@ -39,7 +42,7 @@ export class HomePage extends Component {
   }
 
   render() {
-    const { user, btcRate } = this.state
+    const { btcRate, user } = this.state
     if (!user || !btcRate) return <div>Loading...</div>
     return (
       <section className="home-page">
@@ -72,4 +75,10 @@ export class HomePage extends Component {
   }
 }
 
-export default HomePage
+const mapStateToProps = state => {
+  return {
+      user: state.userModule.user
+  }
+}
+
+export const HomePage = connect(mapStateToProps)(_HomePage)

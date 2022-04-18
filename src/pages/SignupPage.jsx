@@ -37,9 +37,9 @@ export class SignupPage extends Component {
         <h1>Mister Bitcoin</h1>
         <h2>Crypto application services.</h2>
         <label>
-          <span>Start with writing your name <i class="fa-solid fa-arrow-right"></i></span>
+          <span>Start with writing your name <i className="fa-solid fa-arrow-right"></i></span>
           <input onChange={this.handleChange} type="text" name="userName" value={userName} />
-        <span className="go" onClick={() => this.signup()}><i class="fa-brands fa-golang"></i></span>
+        <span className="go" onClick={() => this.signup()}><i className="fa-brands fa-golang"></i></span>
         </label>
         {/* <button onClick={() => this.signup()}>Start!</button> */}
       </section>

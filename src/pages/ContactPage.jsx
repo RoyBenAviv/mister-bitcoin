@@ -40,7 +40,7 @@ class _ContactPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    contacts: state.contacts
+    contacts: state.contactModule.contacts
   }
 }
 
