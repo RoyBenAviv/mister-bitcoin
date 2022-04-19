@@ -4,6 +4,7 @@ export function MoveList({ title, moves, homepage }) {
   return (
     <section className="move-list">
       <h3>{title}</h3>
+      <div>
       {moves.length ? (
         moves.map((move) => (
           <div className="movelist-container" key={move.at}>
@@ -14,7 +15,8 @@ export function MoveList({ title, moves, homepage }) {
         ))
       ) : (
         <p>No current transactions.</p>
-      )}
+        )}
+        </div>
     </section>
   )
 }

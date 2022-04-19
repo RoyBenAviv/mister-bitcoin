@@ -51,7 +51,6 @@ export class SignupPage extends Component {
           <div className={'error ' + (blankInput ? 'on' : '')}><p>Please enter a name!</p></div>
         <span className="go" onClick={() => this.signup()}><i className="fa-brands fa-golang"></i></span>
         </label>
-        {/* <button onClick={() => this.signup()}>Start!</button> */}
       </section>
     )
   }

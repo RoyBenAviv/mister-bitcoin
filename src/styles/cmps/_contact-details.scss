@@ -1,61 +1,86 @@
 .contact-details {
-    margin-block-start: rem(20px);
-    @include flex(column);
-    h1 {
-        font-size: rem(50px);
-        margin-block-start: rem(10px);
-        border-top: 4px solid $bitcoin;
-        padding-block: rem(10px);
+  margin-block-start: rem(20px);
+  @include flex(column);
+  h1 {
+    font-size: rem(35px);
+    margin-block-start: rem(10px);
+    border-top: 4px solid $bitcoin;
+    padding-block: rem(10px);
+  }
+  img {
+    width: 300px;
+  }
+  h2 {
+    margin: rem(10px);
+    font-size: rem(20px);
+    span {
+      color: $pink;
     }
-    img {
-        width: 300px;
-    }
-    h2 {
-        margin: rem(15px);
-        span {
-            color: $pink;
-        }
-    }
-    .exit {
-        cursor: pointer;
-        color: $bitcoin;
-        position: absolute;
-        font-size: rem(70px);
-        left: 50px;
-        top: 200px;
-        transform: scaleX(-1);
-    }
-}
-
-.transfer-fund {
+  }
+  .exit {
+    cursor: pointer;
+    color: $bitcoin;
+    position: absolute;
+    font-size: rem(70px);
+    left: 50px;
+    top: 200px;
+    transform: scaleX(-1);
+  }
+  .transfer-fund {
+    text-align: center;
     margin-block-start: rem(20px);
     p {
-        padding: rem(10px);
-        text-align: center;
+      padding: rem(10px);
+      text-align: center;
+      margin-block-end: rem(10px);
     }
     label {
-        margin: rem(15px);
+      margin: rem(15px);
+      font-size: rem(20px);
+      font-family: inter-bold;
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input {
+        margin-inline-start: rem(10px);
+        background: none;
+        width: 15%;
+        color: $white;
         font-size: rem(24px);
-        font-family: inter-bold;
-        input {
-            margin-inline-start: rem(10px);
-            background: none;
-            width: 50%;
-            color: $white;
-            font-size: rem(24px);
-            border: none;
-            border-bottom: 2px solid $pink;
-            &:focus {
-                outline: none;
-            }
+        border: none;
+        border-bottom: 2px solid $pink;
+        &:focus {
+          outline: none;
         }
+      }
     }
     button {
-        @include button;
-        @include title-gradiant;
-        border: 2px solid white;
+      @include button;
+      @include title-gradiant;
+      border: 2px solid white;
+      font-size: rem(14px)
     }
-}
-.move-list {
-    margin-block-start: rem(20px);
+  }
+  .move-list {
+    margin: rem(35px) 0;
+    h3 {
+      text-align: center;
+      margin-block-end: rem(30px);
+    }
+    div {
+      @include flex;
+      flex-wrap: wrap;
+      gap: rem(40px);
+      .movelist-container {
+        gap: rem(10px);
+        @include flex(column);
+      }
+    }
+    i {
+      color: $bitcoin;
+      margin-inline-start: rem(4px);
+    }
+  }
 }
