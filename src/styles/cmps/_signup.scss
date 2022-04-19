@@ -12,6 +12,21 @@ overflow: hidden;
         }
     }
   }
+  .error {
+    position: absolute;
+    border-radius: 10px;
+    padding: rem(20px);
+    background-color: rgb(182, 28, 28);
+    font-size: rem(16px);
+    bottom: 60px;
+    left: -60px;
+    transform: rotate(-25deg);
+    opacity: 0;
+    transition: opacity 0.5s;
+    &.on {
+      opacity: 1;
+    }
+  }
   h1 {
     font-size: rem(80px);
     margin-block-start: rem(-70px);

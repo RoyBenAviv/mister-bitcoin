@@ -14,11 +14,20 @@ export class SignupPage extends Component {
 
   state = {
     userName: '',
+    blankInput: false
   }
 
   signup() {
+    if(!this.state.userName) {
+      this.setState({blankInput: true})
+      setTimeout(() => {
+        this.setState({blankInput: false})
+      }, 5000)
+      return
+    }
     userService.signup(this.state.userName)
     this.props.history.push('/')
+    this.setState({userName: ''})
   }
 
   handleChange = async ({ target }) => {
@@ -28,7 +37,7 @@ export class SignupPage extends Component {
   }
 
   render() {
-    const { userName } = this.state
+    const { userName, blankInput } = this.state
     return (
       <section className="signup-page">
         <div className="btc-animation">
@@ -39,6 +48,7 @@ export class SignupPage extends Component {
         <label>
           <span>Start with writing your name <i className="fa-solid fa-arrow-right"></i></span>
           <input onChange={this.handleChange} type="text" name="userName" value={userName} />
+          <div className={'error ' + (blankInput ? 'on' : '')}><p>Please enter a name!</p></div>
         <span className="go" onClick={() => this.signup()}><i className="fa-brands fa-golang"></i></span>
         </label>
         {/* <button onClick={() => this.signup()}>Start!</button> */}

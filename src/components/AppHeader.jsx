@@ -12,7 +12,7 @@ export function AppHeader() {
       </div>
       <nav>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/contact">Contacts</NavLink>
         <NavLink to="/statistic">Statistic</NavLink>
       </nav>
     </header>
