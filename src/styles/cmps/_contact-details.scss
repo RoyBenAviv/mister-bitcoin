@@ -26,3 +26,36 @@
         transform: scaleX(-1);
     }
 }
+
+.transfer-fund {
+    margin-block-start: rem(20px);
+    p {
+        padding: rem(10px);
+        text-align: center;
+    }
+    label {
+        margin: rem(15px);
+        font-size: rem(24px);
+        font-family: inter-bold;
+        input {
+            margin-inline-start: rem(10px);
+            background: none;
+            width: 50%;
+            color: $white;
+            font-size: rem(24px);
+            border: none;
+            border-bottom: 2px solid $pink;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    button {
+        @include button;
+        @include title-gradiant;
+        border: 2px solid white;
+    }
+}
+.move-list {
+    margin-block-start: rem(20px);
+}

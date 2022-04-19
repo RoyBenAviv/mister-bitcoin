@@ -20,13 +20,13 @@ export class TransferFund extends Component {
     const { amount } = this.state
     return (
       <section className="transfer-fund">
-        <p>Transfer coins to {this.props.contact.name}</p>
+        <p>Transfer coins to {this.props.contact.name}:</p>
         <label>
           Amount:
           <input type="number" onChange={this.handleChange} name="amount" value={amount} />
         </label>
         {/* <button onClick={() => this.onTransferCoins()}>Transfer</button> */}
-        <button onClick={this.onTransferCoins}>Transfer</button>
+        <button onClick={this.onTransferCoins}>Transfer!</button>
       </section>
     )
   }
